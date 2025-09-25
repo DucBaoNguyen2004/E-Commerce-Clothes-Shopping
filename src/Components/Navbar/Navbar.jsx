@@ -11,10 +11,10 @@ export const Navbar = () => {
             <p>SHOPPINK</p>
         </div>
         <ul className="nav-menu">
-            <li onClick={()=>{setMenu("shop")}}>Shop <hr/></li>
-            <li onClick={()=>{setMenu("mens")}}>Men</li>
-            <li onClick={()=>{setMenu("womens")}}>Women</li>
-            <li onClick={()=>{setMenu("kids")}}>Kid</li>
+            <li onClick={()=>{setMenu("shop")}}>Shop  {menu==="shop"?<hr/>:<>  </>}</li>
+            <li onClick={()=>{setMenu("mens")}}>Men {menu==="mens"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("womens")}}>Women {menu==="womens"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("kids")}}>Kid {menu==="kids"?<hr/>:<></>}</li>
         </ul>
         <div className="nav-login-cart">
             <button>Login</button>
