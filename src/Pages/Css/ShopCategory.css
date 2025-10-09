@@ -1,60 +1,74 @@
+
 .shop-category {
-  padding: 20px;
-  background-color: #fff;
+  background: #fff;
 }
 
+/* banner */
 .shopcategory-banner {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+  display: block;
+  margin: 30px auto;
+  width: 82%;
+  max-width: 1200px;
 }
 
+/* header sort row */
 .shopcategory-sortIndex {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #333;
-}
-
-.shopcategory-sortIndex span {
-  font-weight: bold;
+  margin: 0 auto;
+  width: 82%;
+  max-width: 1200px;
+  padding: 10px 0;
 }
 
 .category-sort {
-  display: flex;
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 1px solid #888;
+  display: inline-flex;
   align-items: center;
-  cursor: pointer;
+  gap: 8px;
 }
 
-.category-sort img {
-  width: 10px;
-  margin-left: 5px;
-}
-
+/* --- GRID PRODUCTS: 4 cột, khung bằng banner --- */
 .shopcategory-products {
+  width: 82%;
+  max-width: 1200px;     /* giống banner */
+  margin: 20px auto 60px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 40px;             /* khoảng cách cả hàng & cột */
+  align-items: start;
 }
-.shopcategory-loadmore {
+
+/* ẩn scrollbar nếu có (tuỳ trình duyệt) */
+.shopcategory-products {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.shopcategory-products::-webkit-scrollbar { display: none; }
+
+/* responsive */
+@media (max-width:1200px){
+  .shopcategory-products { grid-template-columns: repeat(3, 1fr); width: 90%; }
+}
+@media (max-width:768px){
+  .shopcategory-products { grid-template-columns: repeat(2, 1fr); width: 92%; gap: 24px; }
+}
+@media (max-width:480px){
+  .shopcategory-products { grid-template-columns: 1fr; width: 94%; gap: 20px; }
+}
+.shopcategory-loadmore{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 150px; 
-  background-color: #e0e0e0; 
-  color: #000; 
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 20px auto; 
-  border: none;
-  border-radius: 25px; 
-  text-align: center;
-}
-
-.shopcategory-loadmore:hover {
-  background-color: #d0d0d0; 
+  margin: 150px auto;
+  width: 233px;
+  height: 69px;
+  border-radius: 75px;
+  background: #ededed;
+  color: #787878;
+  font-size: 18px;
+  font-weight: 500;
 }
