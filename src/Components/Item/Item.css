@@ -7,7 +7,7 @@
   text-decoration: line-through;
 }
 
-/* hover nhẹ */
+
 .shopcategory-products .item:hover {
   transform: translateY(-6px);
   transition: transform .2s ease;

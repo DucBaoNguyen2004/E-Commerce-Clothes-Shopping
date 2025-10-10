@@ -4,20 +4,20 @@ import { ShopContext } from '../Context/ShopContext'
 import down_icon from '../Components/Assets/dropdown_icon.png'
 import {Item} from '../Components/Item/Item'
 export const ShopCategory = (props) => {
-  var {all_products} = React.useContext(ShopContext)
+  var {all_product} = React.useContext(ShopContext)
   return (
     <div className='shop-category'>
       <img className="shopcategory-banner" src={props.banner} alt="" />
       <div className="shopcategory-sortIndex">
         <p>
-          <span>Showing 1-12</span> out of <span>{all_products.length}</span> 
+          <span>Showing 1-12</span> out of <span>{all_product.length}</span> 
         </p>
         <div className="category-sort">
            Sort by <img src={down_icon} alt="" />
         </div>
       </div>
       <div className="shopcategory-products">
-        {all_products.map((item,i)=>{
+        {all_product.map((item,i)=>{
           if(props.category===item.category){
             return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price} />
           }
