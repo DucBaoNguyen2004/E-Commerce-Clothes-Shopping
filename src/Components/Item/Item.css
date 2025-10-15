@@ -42,3 +42,10 @@
   flex-direction: column;
   gap: 12px;
 }
+.item-price-old{
+    color: #818181;
+    text-decoration: line-through;
+}
+.item-price-new{
+font-weight: 600;
+}
