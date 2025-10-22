@@ -4,7 +4,6 @@
     padding: 16px;
     box-shadow: 0 1px 3px -2px black;
     align-items: center;
-    overflow: visible;
 }
 .navbar-logo{
     display: flex;
@@ -104,7 +103,7 @@
         font-size: 12px;
     }
 }
-@media(max-width:1024px)
+@media(max-width:992px)
 {
     .navbar{
         padding: 12px 30px;
@@ -126,7 +125,7 @@
         height: 18px;
     }
 }
-@media(max-width:800px)
+@media(max-width:768px)
 {
     .navbar{
     padding: 10px 0px;
@@ -153,7 +152,7 @@
         transform: rotate(90deg);
     }
 }
-@media(max-width:500px){
+@media(max-width:480px){
     .navbar{
         width: 8px 0px;
         gap:0;
