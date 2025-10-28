@@ -50,7 +50,7 @@
     align-items: center;
     justify-content: center;
 }
-@media(max-width:1281px){
+@media(max-width:1280px){
     .hero-left{
         padding-left: 100px;
     }
@@ -74,7 +74,7 @@
         width: 500px;
     }
 }
-@media(max-width:992px){
+@media(max-width:1024px){
     .hero-left{
         padding-left: 80px;
     }
@@ -96,7 +96,7 @@
         width: 400px;
     }
 }
-@media(max-width:768px){
+@media(max-width:800px){
     .hero-left{
         padding-left: 30px;
     }
@@ -118,7 +118,7 @@
         width: 300px;
     }
 }
-@media(max-width:480px){
+@media(max-width:500px){
     .hero{
         flex-direction: column;
     }
