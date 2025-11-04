@@ -1,15 +1,19 @@
 .loginsignup{
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
     background: #fce3fe;
-    padding-top: 100px;   
+    padding: 80px 16px 40px;   
+    display: flex;
+    align-items: center;
 }
 .loginsignup-container{
     width: 580px;
-    height: 600px;
+    max-width: 100%;
     background: white;
-    margin: auto;
-    padding: 40px 60px;
+    margin: 0 auto;
+    padding: 32px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
 }
 .loginsignup-container h1{
     margin: 20px 0px;
@@ -30,7 +34,7 @@
     outline: none;
 }
 .loginsignup-container button{
-    width: 570px;
+    width: 100%;
     height: 72px;
     background: #ff4141;
     color: white;
@@ -58,4 +62,30 @@
     color: #5c5c5c;
     font-size: 18px;
     font-weight: 500;
+}
+
+/* Responsive */
+@media(max-width:1024px){
+    .loginsignup{ padding: 70px 16px 36px; }
+    .loginsignup-container{ width: 520px; padding: 28px 36px; }
+    .loginsignup-fields input{ height: 64px; font-size: 16px; }
+    .loginsignup-container button{ height: 64px; font-size: 20px; }
+}
+@media(max-width:768px){
+    .loginsignup{ padding: 60px 14px 30px; }
+    .loginsignup-container{ width: 440px; padding: 24px 28px; }
+    .loginsignup-fields{ gap: 20px; }
+    .loginsignup-fields input{ height: 56px; font-size: 15px; }
+    .loginsignup-container button{ height: 56px; font-size: 18px; }
+    .loginsignup-login, .loginsignup-agree{ font-size: 16px; }
+}
+@media(max-width:500px){
+    .loginsignup{ padding: 50px 12px 24px; min-height: calc(100vh - 100px); }
+    .loginsignup-container{ width: 100%; padding: 20px 16px; border-radius: 10px; }
+    .loginsignup-container h1{ margin: 10px 0; font-size: 24px; text-align: center; }
+    .loginsignup-fields{ gap: 16px; margin-top: 16px; }
+    .loginsignup-fields input{ height: 50px; font-size: 14px; }
+    .loginsignup-container button{ height: 50px; font-size: 16px; }
+    .loginsignup-login, .loginsignup-agree{ font-size: 14px; }
+    .loginsignup-agree{ gap: 12px; }
 }

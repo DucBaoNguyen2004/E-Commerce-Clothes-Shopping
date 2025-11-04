@@ -3,8 +3,9 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    height: 90vh;
-
+    height: auto;
+    margin-top: 12px;
+    margin-bottom: 100px;
 }
 .popular h1{
     color: #171717;
@@ -13,19 +14,20 @@
 }
 .popular hr{
     width: 200px;
-    height: 6x;
+    height: 6px;
     border-radius: 10px;
     background: #252525;
-
 }
 .popular_item{
-    display: flex;
-    margin-top: 50px;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 30px;
+    gap: 20px;
 }
-@mdeia(max-width:1280px){
+@media(max-width:1280px){
     .popular{
-        height:70vh;
+        margin-top: 10px;
+        margin-bottom: 70px;
     }
     .popular h1{
         font-size: 40px;
@@ -35,13 +37,15 @@
         height:4px;
     }
     .popular_item{
-        gap:20px;
-        margin-top:30px;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap:15px;
+        margin-top:20px;
     }
 }
-@mdeia(max-width:1024px){
+@media(max-width:1024px){
     .popular{
-        height:60vh;
+        margin-top: 10px;
+        margin-bottom: 60px;
     }
     .popular h1{
         font-size: 30px;
@@ -51,32 +55,66 @@
         height:4px;
     }
     .popular_item{
-        gap:15px;
-        margin-top:20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap:12px;
+        margin-top:15px;
     }
 }
-@mdeia(max-width:800px){
+@media(max-width:800px){
     .popular{
-        height:50vh;
-        gap:6px;
+        gap:8px;
+        margin-top: 8px;
+        margin-bottom: 50px;
+    }
+    .popular h1{
+        font-size:24px;
+    }
+    .popular hr{
+        width: 100px;
+        height: 3px;
+    }
+    .popular_item{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap:8px;
+        margin-top:12px;
+    }
+}
+@media(max-width:600px){
+    .popular{
+        gap:8px;
+        margin-top: 8px;
+        margin-bottom: 50px;
     }
     .popular h1{
         font-size:20px;
     }
     .popular hr{
-        width: 100px;       
+        width: 90px;
+        height: 2.5px;
     }
     .popular_item{
-        gap:5px;
+        grid-template-columns: 1fr 1fr;
+        gap:12px;
+        margin-top:15px;
     }
 }
 @media(max-width:500px){
     .popular{
-        height:90vh;
+        gap:8px;
+        margin-top: 6px;
+        margin-bottom: 40px;
     }
-   .popular_item{
-    display: grid;
-    grid-template-columns: (repeat(2,1fr));
-    gap: 20px;
-   }
+    .popular h1{
+        font-size:18px;
+    }
+    .popular hr{
+        width: 80px;
+        height: 2px;
+    }
+    .popular_item{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 15px;
+        margin-top: 15px;
+    }
 }

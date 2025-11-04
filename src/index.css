@@ -1,7 +1,15 @@
-* {  
+/* Global reset + responsive defaults */
+* {
 margin: 0;
 padding: 0;
-box-sizing: 0;
+box-sizing: border-box;
+}
+img,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 body {
   margin: 0;

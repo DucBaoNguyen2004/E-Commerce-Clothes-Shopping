@@ -4,6 +4,8 @@
     padding: 16px;
     box-shadow: 0 1px 3px -2px black;
     align-items: center;
+    position: relative;
+    z-index: 100;
 }
 .navbar-logo{
     display: flex;
@@ -129,21 +131,29 @@
 {
     .navbar{
     padding: 10px 0px;
+    position: relative;
+    z-index: 1000;
     }
     .drop-down{
         display: block;
         width: 30px;
         rotate: -90deg;
         transition: 0.5s;
+        cursor: pointer;
+        z-index: 1001;
     }
     .nav-menu{
         display: none;
         height: 80px;
         width: 100%;
         position: absolute;
+        left: 0;
         background-color: white;
         justify-content: center;
-        top: 50px;  
+        top: 100%;
+        z-index: 999;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: visible;
     }
     .nav-menu-visible{
         display: flex;
@@ -154,17 +164,27 @@
 }
 @media(max-width:500px){
     .navbar{
-        width: 8px 0px;
+        padding: 8px 0px;
         gap:0;
+        position: relative;
+        z-index: 1000;
     }
     .nav-logo{
         transform: scale(0.8);
     }
     .nav-menu{
         height: 70px;
-        top: 50px;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: visible;
     }
     .nav-login-cart{
         transform: scale(0.8);
+    }
+    .drop-down{
+        z-index: 1001;
     }
 }

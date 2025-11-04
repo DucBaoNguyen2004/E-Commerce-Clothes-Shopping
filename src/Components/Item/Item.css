@@ -1,3 +1,37 @@
+.item {
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/4;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.item p {
+  margin: 0;
+  font-size: 14px;
+  color: #222;
+  line-height: 1.35;
+  min-height: 42px;
+}
+.item .item-prices {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+.item:hover {
+  transform: translateY(-6px);
+  transition: transform .2s ease;
+}
 .shopcategory-products .item-price-new {
   font-weight: 700;
   color: #0b0b0b;
@@ -29,9 +63,10 @@
 .shopcategory-products .item img {
   display: block;
   width: 100%;
-  height: 320px;           
+  aspect-ratio: 3/4;       /* giữ tỷ lệ ảnh nhất quán */
+  height: auto;
   object-fit: cover;       
-  border-radius: 4px;
+  border-radius: 8px;
 }
 .shopcategory-products .item {
   background: #fff;
@@ -49,47 +84,10 @@
 .item-price-new{
 font-weight: 600;
 }
-@media(max-width:1280px){
-  .item{
-    width: 220px;
-    font-size: 14px;
-  }
-  .item img{
-    width: 220px;
-  }
-  .item-price-old{
-    font-size: 14px;
-  }
-}
+/* Typography scale inside product card on smaller screens */
 @media(max-width:1024px){
-  .item{
-    width: 170px;
-    font-size: 13px;
-  }
-  .item img{
-    width: 170px;
-  }
-  .item-price-old{
-    font-size: 13px;
-  }
+  .shopcategory-products .item p { font-size: 13px; }
 }
-@media(max-width:800px){
-  .item{
-    width: 120px;
-    font-size: 12px;
-  }
-  .item img{
-    width: 120px;
-  }
-  .item-price-old{
-    font-size: 12px;
-  }
-}
-@media(max-width:500px){
-  .item{
-    width: 160px;
-  }
-  .item img{
-    width: 160px;
-  }
+@media(max-width:768px){
+  .shopcategory-products .item p { font-size: 12px; }
 }

@@ -6,9 +6,10 @@
 /* banner */
 .shopcategory-banner {
   display: block;
-  margin: 30px auto;
-  width: 82%;
+  margin: 24px auto 18px;
+  width: 100%;
   max-width: 1200px;
+  padding: 0 4%;
 }
 
 /* header sort row */
@@ -16,10 +17,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 16px;
   margin: 0 auto;
-  width: 82%;
+  width: 100%;
   max-width: 1200px;
-  padding: 10px 0;
+  padding: 8px 4%;
 }
 
 .category-sort {
@@ -30,19 +33,17 @@
   align-items: center;
   gap: 8px;
 }
-
-/* --- GRID PRODUCTS: 4 cột, khung bằng banner --- */
 .shopcategory-products {
-  width: 82%;
-  max-width: 1200px;     /* giống banner */
-  margin: 20px auto 60px;
+  width: 100%;
+  max-width: 1200px;     
+  margin: 16px auto 60px;
+  padding: 0 4%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;             /* khoảng cách cả hàng & cột */
+  gap: 32px;             
   align-items: start;
 }
 
-/* ẩn scrollbar nếu có (tuỳ trình duyệt) */
 .shopcategory-products {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -51,13 +52,17 @@
 
 /* responsive */
 @media (max-width:1200px){
-  .shopcategory-products { grid-template-columns: repeat(3, 1fr); width: 90%; }
+  .shopcategory-products { grid-template-columns: repeat(3, 1fr); }
 }
-@media (max-width:768px){
-  .shopcategory-products { grid-template-columns: repeat(2, 1fr); width: 92%; gap: 24px; }
+@media (max-width:900px){
+  .shopcategory-banner { padding: 0 5%; }
+  .shopcategory-products { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+@media (max-width:600px){
+  .shopcategory-sortIndex{ justify-content: center; text-align: center; }
 }
 @media (max-width:480px){
-  .shopcategory-products { grid-template-columns: 1fr; width: 94%; gap: 20px; }
+  .shopcategory-products { grid-template-columns: 1fr; gap: 18px; }
 }
 .shopcategory-loadmore{
   display: flex;

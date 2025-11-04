@@ -1,7 +1,8 @@
 .hero{
-    height: 100vh;
+    min-height: 70vh;
     background:linear-gradient(180deg,#fde1ff,#e1ffea22 60%) ;
     display: flex;
+    padding: 30px 0;
 }
 .hero-left{
    flex: 1;
@@ -54,6 +55,10 @@
     .hero-left{
         padding-left: 100px;
     }
+    .hero{
+        min-height: 60vh;
+        padding: 24px 0;
+    }
     .hero-left h2{
         font-size: 22px;
     }
@@ -78,6 +83,10 @@
     .hero-left{
         padding-left: 80px;
     }
+    .hero{
+        min-height: 50vh;
+        padding: 20px 0;
+    }
     .hero-left h2{
         font-size: 20px;
     }
@@ -97,6 +106,10 @@
     }
 }
 @media(max-width:800px){
+    .hero{
+        min-height: auto;
+        padding: 16px 0 12px;
+    }
     .hero-left{
         padding-left: 30px;
     }
@@ -121,6 +134,7 @@
 @media(max-width:500px){
     .hero{
         flex-direction: column;
+        padding: 12px 0 8px;
     }
     .hero-right{
         display: none;
