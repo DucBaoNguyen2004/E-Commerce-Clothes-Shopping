@@ -17,6 +17,23 @@ const AddProduct = () => {
     const changeHandler =(e)=>{
         setProductDetails({...productDetails,[e.target.name]:e.target.value})
     }
+    const Add_Product =async ()=>{
+        let resData
+        let product =productDetails
+        let formData=new FormData()
+        formData.append('product',image)
+        await fetch('http://localhost:4000/upload',{
+            method:"POST",
+            headers:{
+                Accept:'application/json'
+            },
+            body:formData,
+        }).then((resp)=>resp.json().then((data)=>{resData=data}))
+        if(resData.success){
+            product.image=resData.image_url
+            console.log(product)
+        }
+    }
   return (
     <div className='add-product'>
         <div className="addproduct-itemfield">
@@ -37,8 +54,8 @@ const AddProduct = () => {
             <p>Product Category</p>
             <select value={productDetails.category} onChange={changeHandler} name="category" className='add-product-selection'>
             <option value="women">Women</option>
-             <option value="men">Men</option>
-              <option value="kid">Kid</option>
+            <option value="men">Men</option>
+            <option value="kid">Kid</option>
             </select>
         </div>
         <div className="addproduct-itemfield">
@@ -47,7 +64,7 @@ const AddProduct = () => {
             </label>
             <input onChange={imageHandler} type="file" name='image'id='file-input'hidden/>
         </div>
-        <button className='addproduct-button'>Add</button>
+        <button onClick={()=>{Add_Product()}} className='addproduct-button'>Add</button>
     </div>
   )
 }
