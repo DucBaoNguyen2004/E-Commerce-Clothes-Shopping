@@ -17,7 +17,7 @@ const ListProduct = () => {
     await fetch('http://localhost:4000/removeproduct',{
       method:'POST',
       headers:{
-        Accept:'appilcation/json',
+        Accept:'application/json',
         'Content-Type':'application/json'
       },
       body:JSON.stringify({id:id})
