@@ -1,16 +1,17 @@
-const port =  process.env.PORT|| 4000
+const port = process.env.PORT || 4000
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
-const cors = require('cors');
 const path = require('path');
-const { type } = require('os');
-const { log, error } = require('console');
+const cors = require('cors');
+require('dotenv').config(); // Load environment variables
+
 app.use(express.json());
 app.use(cors());
-mongoose.connect("mongodb+srv://ducbaodb:ducbao2004@cluster0.6c9c544.mongodb.net/e-commerce")
+
+mongoose.connect(process.env.MONGO_URI)
 
 app.get('/', (req, res) => {
     res.send("Express is running");
@@ -178,7 +179,7 @@ app.post('/signup', async (req, res) => {
             id: user.id
         }
     }
-    const token = jwt.sign(data, 'secret_ecom')
+    const token = jwt.sign(data, process.env.JWT_SECRET)
     res.json({ success: true, token })
 })
 
@@ -192,7 +193,7 @@ app.post('/login', async (req, res) => {
                     id: user.id
                 }
             }
-            const token = jwt.sign(data, "secret_ecom")
+            const token = jwt.sign(data, process.env.JWT_SECRET)
             res.json({ success: true, token })
         }
         else {
@@ -225,7 +226,7 @@ const fetchUser = async (req, res, next) => {
     }
     else {
         try {
-            const data = jwt.verify(token, 'secret_ecom')
+            const data = jwt.verify(token, process.env.JWT_SECRET)
             req.user = data.user
             next()
         } catch (error) {
