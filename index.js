@@ -29,14 +29,14 @@ app.use('/images', express.static('upload/images'))
 app.post('/upload', upload.single('product'), (req, res) => {
     res.json({
         success: 1,
-        image_url: `http://localhost:${port}/images/${req.file.filename}`
+        image_url: `${process.env.BACKEND_URL || `http://localhost:${port}`}/images/${req.file.filename}`
     })
 })
 
 const Product = mongoose.model('Product', {
     id: {
         type: Number,
-        require: true
+        required: true
     },
     name: {
         type: String,
